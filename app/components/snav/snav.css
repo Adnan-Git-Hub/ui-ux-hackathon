@@ -1,87 +1,109 @@
+/* Main Container */
 .snav-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 90px;
-    font-size: 13px;
-    font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1; /* Ensures it sits below the FNAV */
 }
 
-.snav-main ul {
-    display: flex;
-    gap: 15px;
+/* Nike Logo */
+.nike-img img {
+  cursor: pointer;
 }
 
-.snav-main .search {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.snav-main .search input {
-    border-radius: 20px;
-    padding: 3px;
-    background-color: #f5f5f5;
-    border: none;
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
 }
 
+.nav-links a:hover {
+  color: gray;
+}
+
+/* Search Bar & Icons */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search input {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px 10px;
+  outline: none;
+  font-size: 12px;
+}
+
+.search svg {
+  cursor: pointer;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    /* Adjust for tablets and smaller screens */
-    .snav-main {
-        padding: 10px 20px; /* Reduce padding */
-        font-size: 12px; /* Reduce font size */
-    }
+  .hamburger {
+    display: flex;
+    z-index: 2; /* Ensures menu button is clickable */
+  }
 
-    .snav-main ul {
-        gap: 10px; /* Reduce gap between items */
-    }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust so it doesn’t overlap FNAV */
+    right: 0;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1;
+  }
 
-    .snav-main .search input {
-        width: 120px; /* Adjust search input width */
-        padding: 5px; /* Increase padding for easier touch input */
-    }
+  .nav-links.show {
+    display: flex;
+  }
 
-    .nike-img img {
-        width: 30px; /* Reduce size of the image */
-        height: 30px;
-    }
+  .search input {
+    width: 100px; /* Adjust input size for mobile */
+  }
 
-    .search {
-        gap: 10px; /* Increase gap between icons and search input */
-    }
+  .snav-main {
+    position: relative;
+    margin-top: 25px; /* Adds space below FNAV */
+  }
 }
 
-@media (max-width: 480px) {
-    /* Adjust for smaller screens (mobile devices) */
-    .snav-main {
-        flex-direction: column; /* Stack elements vertically */
-        padding: 10px 10px; /* Reduce padding for mobile */
-    }
-
-    .snav-main ul {
-        flex-direction: column; /* Stack the menu items vertically */
-        align-items: center;
-        gap: 8px; /* Reduce gap between menu items */
-    }
-
-    .snav-main .search {
-        width: 100%; /* Make the search input container take full width */
-        margin-top: 10px;
-        justify-content: space-between; /* Spread out the icons and input */
-    }
-
-    .snav-main .search input {
-        width: 70%; /* Give search input more space */
-    }
-
-    .nike-img img {
-        width: 25px; /* Further reduce image size */
-        height: 25px;
-    }
-
-    .search svg {
-        width: 18px; /* Adjust icon size */
-        height: 18px;
-    }
+/* Ensure FNAV stays on top */
+.frstnav {
+  position: relative;
+  z-index: 10;
 }

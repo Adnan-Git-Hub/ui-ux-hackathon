@@ -14,8 +14,8 @@ export default function Home() {
       <div className="relative z-10">
         <TNAV />
       </div>
-      <div className="flex flex-col justify-center items-center mt-2">
-        <div className="w-10/12 h-[90vh] relative">
+      <div className="flex flex-col justify-center items-center mt-2 mb-0">
+      <div className="w-10/12 h-[25vh] md:h-[70vh] lg:h-[90vh] relative">
           <Image
             src="/mainshoe.png" 
             alt="Nike Shoe"
