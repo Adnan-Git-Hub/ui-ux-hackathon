@@ -4,6 +4,7 @@ import "./globals.css";
 import FNAV from "./components/firstnav/page";
 import SNAV from "./components/snav/page";
 import Footer from "./components/footer/page";
+import TNAV from "./components/tnav/page";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
         <FNAV/>
         <SNAV/>
+        <TNAV/>
         {children}
         <Footer/>
       </body>

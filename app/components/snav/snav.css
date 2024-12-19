@@ -6,8 +6,8 @@
   padding: 10px 20px;
   background-color: white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1; /* Ensures it sits below the FNAV */
+  position: sticky;
+  z-index: 100; /* Ensures it sits below the FNAV */
 }
 
 /* Nike Logo */

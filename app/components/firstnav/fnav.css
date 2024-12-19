@@ -5,7 +5,7 @@
     align-items: center;
     padding: 10px 20px;
     background-color: #f5f5f5; /* Light gray background */
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
