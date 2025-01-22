@@ -1,17 +1,38 @@
 import { defineQuery } from "next-sanity";
 
-
-export const allProducts = defineQuery ( `*[_type == "product"]{
+export const allproducts = defineQuery(`
+    *[type == "productSchema"]{
     _id,
     name,
-    title,
-    type,
-    "discount": discount,
-    "discription":discription,
-    "slug": slug.current,
-    "imageUrl": image.asset->url,
-    "price": price,
+    description,
+    price,
+    category,
+    inventory,
+    status,
+    discountPercentage,
+    pricewithoutDiscount,
+    rating,
+    ratingCount,
     tags,
-    "category": category->title,
-    "categorySlug": category->slug.current,    
-  }`);
+    size,
+    "imageUrl" : image.asset->url
+}`)
+
+
+export const fourpro = defineQuery(`
+    *[type == "productSchema"][0..3]{
+    _id,
+    name,
+    description,
+    price,
+    category,
+    inventory,
+    status,
+    discountPercentage,
+    pricewithoutDiscount,
+    rating,
+    ratingCount,
+    tags,
+    size,
+    "imageUrl" : image.asset->url
+}`)
